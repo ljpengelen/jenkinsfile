@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+yarn lint
+yarn test:unit
+yarn test:e2e --env ci

@@ -1,0 +1,17 @@
+///////////////////////////////////////////////////////////
+//
+// Typography related values
+//
+///////////////////////////////////////////////////////////
+
+// The font for body copy
+$default-font-stack: 'Roboto', sans-serif;
+
+// The font for headers and other large, eye-catching text
+$display-font-stack: $default-font-stack;
+
+$font-size-huge: 2.75rem;
+$font-size-large: 2rem;
+$font-size-medium: 1.25rem;
+$font-size-regular: 1rem;
+$font-size-small: 0.75rem;

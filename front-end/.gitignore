@@ -1,0 +1,6 @@
+.on-save.json
+coverage
+dist
+node_modules
+reports
+yarn-error.log

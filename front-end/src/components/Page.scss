@@ -1,0 +1,22 @@
+@import 'src/styles/settings/measures';
+@import 'src/styles/settings/theme';
+
+.center {
+    margin: $whitespace auto 0;
+    max-width: 40rem;
+    padding: $whitespace;
+}
+
+.main {
+    background: $page-background;
+    color: $text-color;
+    flex: auto;
+    position: relative;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0 auto;
+}

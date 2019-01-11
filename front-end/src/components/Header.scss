@@ -1,0 +1,28 @@
+@import 'src/styles/settings/measures';
+@import 'src/styles/settings/theme';
+@import 'src/styles/settings/typography';
+
+$header-background: $brand-blue;
+$header-text: $text-color-light;
+$header-height: 3rem;
+
+.header {
+    background: $header-background;
+    color: $header-text;
+    height: $header-height;
+    user-select: none;
+
+    h1 {
+        font-size: $font-size-regular;
+        height: 100%;
+        margin: $whitespace auto;
+        width: 8rem;
+    }
+
+    img {
+        left: $whitespace;
+        position: absolute;
+        top: $whitespace;
+        width: 5rem;
+    }
+}
