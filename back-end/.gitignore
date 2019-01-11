@@ -1,0 +1,6 @@
+**/.cache
+**/__pycache__
+**/*.pyc
+.coverage
+.on-save.json
+.pytest_cache
