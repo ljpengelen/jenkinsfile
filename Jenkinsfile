@@ -12,6 +12,7 @@ pipeline {
       agent {
         dockerfile {
           filename "back-end/dockerfiles/ci/Dockerfile"
+          label "webapps"
         }
       }
 
@@ -26,6 +27,7 @@ pipeline {
       agent {
         dockerfile {
           filename "front-end/dockerfiles/ci/Dockerfile"
+          label "webapps"
         }
       }
 
