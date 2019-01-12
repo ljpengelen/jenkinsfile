@@ -14,6 +14,7 @@ pytest-mock = "==1.10.0"
 [packages]
 falcon = "==1.4.1"
 gunicorn = "==19.9.0"
+pyyaml = ">=4.2b1"
 
 [requires]
 python_version = "3.6"
