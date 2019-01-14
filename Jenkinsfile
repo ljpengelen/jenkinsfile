@@ -26,6 +26,7 @@ pipeline {
     stage("Test front end") {
       agent {
         dockerfile {
+          args "-u root"
           filename "front-end/dockerfiles/ci/Dockerfile"
           label "webapps"
         }
