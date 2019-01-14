@@ -1,0 +1,12 @@
+**/.cache
+**/.DS_Store
+**/.git
+**/.on-save
+**/*.pyc
+**/__pycache__
+**/.pytest_cache
+**/node_modules
+back-end/.coverage
+front-end/coverage
+front-end/dist
+front-end/reports
