@@ -6,5 +6,5 @@ docker run -u root --rm -d \
   -v jenkins-data:/var/jenkins_home \
   -v jenkins-root:/root \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  -v /Users/lucengelen/Repositories:/var/repositories \
+  -v /Users/lucengelen/Repositories:/Users/lucengelen/Repositories \
   jenkinsci/blueocean
