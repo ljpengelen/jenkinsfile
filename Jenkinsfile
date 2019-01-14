@@ -32,7 +32,8 @@ pipeline {
       }
 
       steps {
-        sh "cd /app && bin/ci"
+        sh "yarn config set -- --modules-folder /app/node_modules"
+        sh "cd front-end && bin/ci"
       }
     }
   }

@@ -56,5 +56,3 @@ COPY front-end/package.json ./
 COPY front-end/yarn.lock ./
 
 RUN yarn install --frozen-lockfile
-
-COPY front-end .
