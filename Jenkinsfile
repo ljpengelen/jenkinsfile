@@ -17,9 +17,9 @@ pipeline {
       }
 
       steps {
-        sh "cd /app && pylint -E app tests"
-        sh "cd /app && black --check app tests"
-        sh "cd /app && pytest --cov=app"
+        sh "cd back-end && pylint -E app tests"
+        sh "cd back-end && black --check app tests"
+        sh "cd back-end && pytest --cov=app"
       }
     }
 

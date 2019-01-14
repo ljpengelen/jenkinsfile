@@ -13,12 +13,6 @@ ENV LANG C.UTF-8
 
 WORKDIR /app
 
-EXPOSE 8000
-
-ENV APP_ENV production
-
 COPY back-end/Pipfile* ./
 
 RUN pipenv install --system --ignore-pipfile --dev
-
-COPY back-end .
