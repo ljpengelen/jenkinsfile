@@ -15,7 +15,7 @@ WORKDIR /app
 
 EXPOSE 8000
 
-ENV APP_ENV=production
+ENV APP_ENV production
 
 COPY back-end/Pipfile* ./
 
