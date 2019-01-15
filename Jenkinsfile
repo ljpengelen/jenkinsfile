@@ -5,9 +5,9 @@ if (env.BRANCH_NAME == "master" || env.BRANCH_NAME == null) {
   additionalBuildArgs = "--pull --no-cache"
 }
 
-dokkuHostname = "kabisa-dokku-demo-production.westeurope.cloudapp.azure.com"
-if (env.BRANCH_NAME == "staging") {
-  dokkuHostname = "kabisa-dokku-demo-staging.westeurope.cloudapp.azure.com"
+dokkuHostname = "kabisa-dokku-demo-staging.westeurope.cloudapp.azure.com"
+if (env.BRANCH_NAME == "production") {
+  dokkuHostname = "kabisa-dokku-demo-production.westeurope.cloudapp.azure.com"
 }
 
 pipeline {
