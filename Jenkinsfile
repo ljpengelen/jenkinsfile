@@ -18,7 +18,7 @@ pipeline {
   }
 
   triggers{
-    cron(env.BRANCH_NAME == 'master' ? 'H/10 * * * *' : '')
+    cron(env.BRANCH_NAME == 'master' ? '@weekly' : '')
   }
 
   stages {
