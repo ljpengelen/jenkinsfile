@@ -39,6 +39,7 @@ pipeline {
     stage("Test front end") {
       agent {
         dockerfile {
+          additionalBuildArgs "${additionalBuildArgs}"
           args "-u root"
           filename "front-end/dockerfiles/ci/Dockerfile"
           label "webapps"
