@@ -1,5 +1,10 @@
 projectId = "jenkinsfile-demo"
 
+additionalBuildArgs = "--pull"
+if (env.BRANCH_NAME == "master" || env.BRANCH_NAME == null) {
+  additionalBuildArgs = "--pull --no-cache"
+}
+
 dokkuHostname = "kabisa-dokku-demo-production.westeurope.cloudapp.azure.com"
 if (env.BRANCH_NAME == "experiment") {
   dokkuHostname = "kabisa-dokku-demo-staging.westeurope.cloudapp.azure.com"
@@ -16,6 +21,7 @@ pipeline {
     stage("Test back end") {
       agent {
         dockerfile {
+          additionalBuildArgs "${additionalBuildArgs}"
           filename "back-end/dockerfiles/ci/Dockerfile"
           label "webapps"
         }
