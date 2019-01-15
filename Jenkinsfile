@@ -97,11 +97,6 @@ pipeline {
         label "webapps"
       }
 
-      environment {
-        GIT_AUTHOR_EMAIL = "Jenkins"
-        GIT_AUTHOR_NAME = "Jenkins"
-      }
-
       when {
         anyOf {
           branch 'experiment';
