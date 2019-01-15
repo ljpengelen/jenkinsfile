@@ -1,5 +1,10 @@
 projectId = "jenkinsfile-demo"
 
+dokkuHostname = "kabisa-dokku-demo-production.westeurope.cloudapp.azure.com"
+if (env.BRANCH_NAME == "experiment") {
+  dokkuHostname = "kabisa-dokku-demo-staging.westeurope.cloudapp.azure.com"
+}
+
 pipeline {
   agent none
 
@@ -39,6 +44,23 @@ pipeline {
         always {
           sh "chown -R \$(stat -c '%u:%g' .) \$WORKSPACE"
         }
+      }
+    }
+
+    stage("Deploy back end") {
+      agent {
+        label "webapps"
+      }
+
+      when {
+        anyOf {
+          branch 'experiment';
+          branch 'production'
+        }
+      }
+
+      steps {
+        sh "git push -f dokku@${dokkuHostname}:back-end HEAD:refs/heads/master"
       }
     }
   }
