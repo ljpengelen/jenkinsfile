@@ -39,7 +39,7 @@ pipeline {
 
       post {
         always {
-          sh "chown -R \$(stat -c '%u' .) \$WORKSPACE"
+          sh "chown -R \$(stat -c '%u:%g' .) \$WORKSPACE"
         }
       }
     }
