@@ -23,11 +23,11 @@ EXPOSE 8000
 
 ENV APP_ENV production
 
-COPY --chown=999:999 back-end/Pipfile* ./
+COPY back-end/Pipfile* ./
 
 RUN pipenv install --system --ignore-pipfile
 
-COPY --chown=999:999 back-end .
+COPY back-end .
 
 USER appuser
 
