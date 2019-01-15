@@ -17,6 +17,10 @@ pipeline {
     ansiColor("xterm")
   }
 
+  triggers{
+    cron(env.BRANCH_NAME == 'master' ? 'H/5 * * * *' : '')
+  }
+
   stages {
     stage("Test back end") {
       agent {
