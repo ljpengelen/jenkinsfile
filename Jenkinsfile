@@ -17,7 +17,7 @@ pipeline {
     ansiColor("xterm")
   }
 
-  triggers{
+  triggers {
     cron(env.BRANCH_NAME == 'master' ? '@weekly' : '')
   }
 
