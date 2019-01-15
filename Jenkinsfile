@@ -36,6 +36,12 @@ pipeline {
         sh "ln -s /app/node_modules front-end/node_modules"
         sh "cd front-end && bin/ci"
       }
+
+      post {
+        always {
+          sh "chown -R \$(stat -c '%u' .) \$WORKSPACE"
+        }
+      }
     }
   }
 }
