@@ -91,5 +91,28 @@ pipeline {
         }
       }
     }
+
+    stage("Deploy front end") {
+      agent {
+        label "webapps"
+      }
+
+      when {
+        anyOf {
+          branch 'experiment';
+          branch 'production'
+        }
+      }
+
+      steps {
+        sh "rm -rf deploy-front-end"
+        sh "git clone dokku@${dokkuHostname}:front-end deploy-front-end"
+        sh "rm -rf deploy-front-end/dist"
+        sh "mkdir -p deploy-front-end/dist"
+        sh "cp -R front-end/dist/* deploy-front-end/dist"
+        sh "touch deploy-front-end/.static"
+        sh "cd deploy-front-end && git add . && git commit -m \"Deploy\" --allow-empty && git push -f"
+      }
+    }
   }
 }
