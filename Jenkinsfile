@@ -63,5 +63,33 @@ pipeline {
         sh "git push -f dokku@${dokkuHostname}:back-end HEAD:refs/heads/master"
       }
     }
+
+    stage("Build front end") {
+      agent {
+        dockerfile {
+          args "-u root -e 'API_BASE_URL=http://${dokkuHostname}:8000/api'"
+          filename "front-end/dockerfiles/ci/Dockerfile"
+          label "webapps"
+        }
+      }
+
+      when {
+        beforeAgent true
+        anyOf {
+          branch 'experiment';
+          branch 'production'
+        }
+      }
+
+      steps {
+        sh "cd front-end && yarn build"
+      }
+
+      post {
+        always {
+          sh "chown -R \$(stat -c '%u:%g' .) \$WORKSPACE"
+        }
+      }
+    }
   }
 }
