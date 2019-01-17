@@ -1,5 +1,3 @@
-projectId = "jenkinsfile-demo"
-
 additionalBuildArgs = "--pull"
 if (env.BRANCH_NAME == "master") {
   additionalBuildArgs = "--pull --no-cache"
