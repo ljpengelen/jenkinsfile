@@ -1,5 +1,3 @@
-const supportedBrowsers = require("./supported-browsers");
-
 const plugins = [
   "@babel/plugin-proposal-json-strings",
   ["@babel/transform-react-jsx", { pragma: "h" }]
@@ -14,9 +12,6 @@ module.exports = {
     [
       "@babel/env",
       {
-        targets: {
-          browsers: supportedBrowsers
-        },
         corejs: "2",
         loose: true,
         modules: false,
