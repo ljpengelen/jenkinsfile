@@ -45,7 +45,7 @@ pipeline {
       }
 
       steps {
-        sh "ln -s /app/node_modules front-end/node_modules"
+        sh "rm -f front-end/node_modules && ln -s /app/node_modules front-end/node_modules"
         sh "cd front-end && bin/ci"
       }
 
