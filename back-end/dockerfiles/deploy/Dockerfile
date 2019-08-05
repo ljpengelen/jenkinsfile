@@ -1,4 +1,4 @@
-FROM ubuntu:artful
+FROM python:3.7.4-slim-buster
 
 RUN apt-get update \
   && apt-get -y install \
